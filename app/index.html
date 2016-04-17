@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>condic</title>
+	<script>
+		window.onload = function () {
+			require("babel-register")({
+				"presets": ["es2015", "react"]
+			});
+			require("./index.jsx");
+		};
+	</script>
+	<style>
+		html {
+			font-family: "kardinal", Meiryo, Arial, sans-serif;
+		}
+		dt {
+			font-weight: bold;
+		}
+		dd {
+			font-size: 80%;
+			border-bottom: 1px solid #aaa;
+			margin-left: 0.5em;
+			padding-bottom: 0.6em;
+			margin-bottom: 0.6em;
+		}
+		#num {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+</html>
