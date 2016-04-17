@@ -1,9 +1,15 @@
 {
   "name": "condic",
-  "main": "index.html",
-  "window": {
-    "toolbar": true,
-    "width": 800,
-    "height": 600
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.6"
   }
 }

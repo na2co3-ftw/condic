@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>condic</title>
-	<script src="jquery-2.2.1.min.js"></script>
 	<script>
+		window.jQuery = window.$ = require("./jquery-2.2.1.min.js");
 		var Dicman = require("./1line-dic.js");
 		var arka = new Dicman("arka.txt");
 		var arkadic = [];
