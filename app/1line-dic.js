@@ -29,6 +29,7 @@ DicManager.prototype.searchByKey = function(key, mode, callback) {
 		callback = mode;
 		mode = 0;
 	}
+	var ret = [];
 
 	this.lines.forEach(function(line) {
 		var entry = {};
@@ -63,9 +64,9 @@ DicManager.prototype.searchByKey = function(key, mode, callback) {
 			entry.trans = rest;
 			entry.exp = "";
 		}
-		callback(entry);
+		ret.push(entry);
 	});
-	callback(null);
+	callback(ret);
 };
 
 module.exports = DicManager;

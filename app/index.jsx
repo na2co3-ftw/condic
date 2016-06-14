@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 var Dicman = require("./1line-dic.js");
 var arka = new Dicman("arka.txt");
 var arkadic = [];
-arka.searchByKey("", 1, function(entry) {
-	if (!entry) {
-		return;
-	}
-	arkadic.push(entry);
+arka.searchByKey("", 1, function(entries) {
+	arkadic = entries;
 });
 
 
@@ -20,7 +16,6 @@ function escapeBr(str) {
 class WordView extends React.Component {
 	constructor(props) {
 		super(props);
-		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 
 	render() {
@@ -56,11 +51,8 @@ class MainWindow extends React.Component {
 		this.setState({text: e.target.value, entries: []});
 
 		setTimeout(() => {
-			arka.searchByKey(this.state.text, 1, entry => {
-				if (!entry) {
-					return;
-				}
-				this.setState({entries: [...this.state.entries, entry]});
+			arka.searchByKey(this.state.text, 1, entries => {
+				this.setState({entries});
 			});
 		}, 0);
 	}
